@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bench</title>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+<nav>
+    <ul>
+        <li id="simple-nodiff"><a href="?simple-nodiff">simple-nodiff</a></li>
+        <li id="simple-diff"><a href="?simple-diff">simple-diff</a></li>
+        <li id="complex-nodiff"><a href="?complex-nodiff">complex-nodiff</a></li>
+        <li id="complex-diff"><a href="?complex-diff">complex-diff</a></li>
+    </ul>
+</nav>
+<script>
+    var filename = window.location.search.substring(1)
+    if (filename) {
+        System.import('./' + filename + '.js');
+    }
+</script>
+</body>
+</html>
